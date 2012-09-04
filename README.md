@@ -1,7 +1,7 @@
 Jason Krein
 ===========
 
-Operating System Theory
+Operating System Principles
 -----------------------
 
 CNS 3060
