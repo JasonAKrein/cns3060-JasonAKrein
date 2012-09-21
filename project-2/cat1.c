@@ -8,26 +8,13 @@ int main(int argc, char *argv[])
 	FILE* fp;
 	if (argc == 1)
 	{
-		printf ("\n");
-		char g;
-		while ((g = getchar()) != EOF)
+		while(!ferror(stdin) && !feof(stdin))
 		{
-			if (g != '\n')
+			int c = fgetc(stdin);
+			if (c != EOF)
 			{
-				fp = fopen ("/tmp/temp.txt", "a");
-				fputc(g, fp);
-				fclose(fp);
+				fputc(c, stdout);
 			}
-			fp = fopen ("/tmp/temp.txt", "r");
-			char j;
-			while (( j = fgetc(fp)) != EOF)
-                	{
-                       		 printf ("%c", j);
-                	}
-                 	fclose (fp);
-			printf ("\n");
-			fp  = fopen ("/tmp/temp.txt", "w");
-			fclose(fp);
 		}
 	}
 	else if (argc == 2)
